@@ -4,7 +4,7 @@ env:
   variables:
      AWS_DEFAULT_REGION: "us-east-1"
      IMAGE_REPO_NAME: "mahara-assignment3"
-     AWS_ACCOUNT_ID: "7303-3566-4687"
+     AWS_ACCOUNT_ID: "730335664687"
 
 phases:
   #install:
