@@ -3,8 +3,8 @@ version: 0.2
 env:
   variables:
      AWS_DEFAULT_REGION: "us-east-1"
-     IMAGE_REPO_NAME: "assignment3_repo"
-     AWS_ACCOUNT_ID: "471112688122"
+     IMAGE_REPO_NAME: "mahara-assignment3"
+     AWS_ACCOUNT_ID: "730335664687"
 
 phases:
   #install:
