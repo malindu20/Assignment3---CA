@@ -4,7 +4,7 @@ app = Flask(__name__)
  
 @app.route('/')
 def main_route():
-    return 'Main route data display'
+    return 'Mahara Main route data display'
  
 @app.route('/host')
 def host_route():
