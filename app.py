@@ -1,20 +1,20 @@
-from flask import Flask, request
- 
+from flask import Flask
+import socket
+
 app = Flask(__name__)
- 
+hostname = socket.gethostname()
+ip_address = socket.gethostbyname(hostname)
+
 @app.route('/')
-def main_route():
-    return 'Mahara Main route data display'
- 
+def hello_cloud():
+  return 'Hello Cloud!'
+  
 @app.route('/host')
-def host_route():
-    return 'Host route data display'
- 
+def host_name():
+  return hostname
+
 @app.route('/ip')
-def ip_route():
-    # Get client's IP address from the request object
-    client_ip = request.remote_addr
-    return f'IP route data display. Client IP: {client_ip}'
- 
-if __name__ == '__main__':
-    app.run(host='0.0.0.0')
+def host_ip():
+  return ip_address
+
+app.run(host='0.0.0.0')
