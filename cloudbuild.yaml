@@ -11,7 +11,7 @@ steps:
     args:
       - '-c'
       - |
-        gcloud run deploy pythonapp \
+        gcloud run deploy mahara-app \
           --image=us-central1-docker.pkg.dev/myproject-406204/my-new-repo/mahara-app:${COMMIT_SHA} \
           --platform=managed \
           --region=us-central1 \
