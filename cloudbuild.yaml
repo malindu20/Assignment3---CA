@@ -1,10 +1,10 @@
 steps:
   # Build the Docker image
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['build', '-t', 'us-central1-docker.pkg.dev/analog-context-413503/assignment3/pythonapp:${COMMIT_SHA}', '.']
+    args: ['build', '-t', 'us-central1-docker.pkg.dev/myproject-406204/my-new-repo/pythonapp:${COMMIT_SHA}', '.']
   # Push the Docker image to the artifact registry
   - name: 'gcr.io/cloud-builders/docker'
-    args: ['push', 'us-central1-docker.pkg.dev/analog-context-413503/assignment3/pythonapp:${COMMIT_SHA}']
+    args: ['push', 'us-central1-docker.pkg.dev/myproject-406204/my-new-repo/pythonapp:${COMMIT_SHA}']
   # Deploy the Docker container to Google Cloud Run
   - name: 'gcr.io/google.com/cloudsdktool/cloud-sdk'
     entrypoint: 'sh'
@@ -12,7 +12,7 @@ steps:
       - '-c'
       - |
         gcloud run deploy pythonapp \
-          --image=us-central1-docker.pkg.dev/analog-context-413503/assignment3/pythonapp:${COMMIT_SHA} \
+          --image=us-central1-docker.pkg.dev/myproject-406204/my-new-repo/pythonapp:${COMMIT_SHA} \
           --platform=managed \
           --region=us-central1 \
           --port=5000 \
@@ -24,4 +24,4 @@ options:
  
 images:
 # Store images in Google Artifact Registry
-  - us-central1-docker.pkg.dev/analog-context-413503/assignment3/pythonapp:${COMMIT_SHA}
+  - us-central1-docker.pkg.dev/myproject-406204/my-new-repo/pythonapp:${COMMIT_SHA}
